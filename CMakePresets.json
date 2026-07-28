@@ -1,0 +1,30 @@
+{
+  "version": 9,
+  "cmakeMinimumRequired": {"major": 3, "minor": 28, "patch": 0},
+  "configurePresets": [
+    {
+      "name": "debug",
+      "displayName": "Debug",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_CXX_FLAGS": "-fsanitize=address,undefined -fno-omit-frame-pointer -Wall -Wextra -Wpedantic"
+      }
+    },
+    {
+      "name": "release",
+      "displayName": "Release",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_INTERPROCEDURAL_OPTIMIZATION": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {"name": "debug", "configurePreset": "debug"},
+    {"name": "release", "configurePreset": "release"}
+  ]
+}

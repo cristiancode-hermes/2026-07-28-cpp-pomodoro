@@ -1,0 +1,8 @@
+build/
+pomodoro
+*.o
+*.obj
+*.exe
+compile_commands.json
+.vscode/
+.idea/

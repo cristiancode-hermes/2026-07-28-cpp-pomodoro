@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pomodoro Timer — Terminal Screenshot</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #1e1e2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Fira Code', 'Cascadia Code', 'JetBrains Mono', monospace;
+  }
+
+  .terminal {
+    background: #181825;
+    border-radius: 12px;
+    padding: 24px 28px;
+    width: 780px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    border: 1px solid #313244;
+  }
+
+  .terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #313244;
+  }
+
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .dot.red { background: #f38ba8; }
+  .dot.yellow { background: #f9e2af; }
+  .dot.green { background: #a6e3a1; }
+
+  .terminal-title {
+    color: #6c7086;
+    font-size: 13px;
+    margin-left: 8px;
+  }
+
+  .line {
+    color: #cdd6f4;
+    font-size: 14px;
+    line-height: 1.7;
+    white-space: pre;
+  }
+
+  .cyan { color: #89dceb; }
+  .green { color: #a6e3a1; }
+  .yellow { color: #f9e2af; }
+  .red { color: #f38ba8; }
+  .blue { color: #89b4fa; }
+  .dim { color: #6c7086; }
+  .white { color: #cdd6f4; }
+  .bold { font-weight: 700; }
+  .pink { color: #f5c2e7; }
+  .peach { color: #fab387; }
+
+  .prompt { color: #a6e3a1; }
+  .cmd { color: #cdd6f4; }
+</style>
+</head>
+<body>
+<div class="terminal">
+  <div class="terminal-header">
+    <span class="dot red"></span>
+    <span class="dot yellow"></span>
+    <span class="dot green"></span>
+    <span class="terminal-title">pomodoro — zsh</span>
+  </div>
+
+  <div class="line"><span class="prompt">~/pomodoro&gt;</span> <span class="cmd">./pomodoro</span></div>
+  <div class="line">&nbsp;</div>
+  <div class="line"><span class="cyan bold">📋 Pomodoro Session Plan</span></div>
+  <div class="line"><span class="dim">  2026-07-28  |  Started at 10:30</span></div>
+  <div class="line">&nbsp;</div>
+  <div class="line">  <span class="bold">Work:</span>        25 min     <span class="green">●</span></div>
+  <div class="line">  <span class="bold">Break:</span>       5 min</div>
+  <div class="line">  <span class="bold">Long Break:</span>  15 min  (every 4 sessions)</div>
+  <div class="line">&nbsp;</div>
+  <div class="line">  <span class="bold">Schedule:</span> <span class="cyan"></span></div>
+  <div class="line">    Session 1:  Work 25 min  →  Break 5 min</div>
+  <div class="line">    Session 2:  Work 25 min  →  Break 5 min</div>
+  <div class="line">    Session 3:  Work 25 min  →  Break 5 min</div>
+  <div class="line">    Session 4:  Work 25 min  →  Long Break 15 min</div>
+  <div class="line">&nbsp;</div>
+  <div class="line">  <span class="bold">Total time:</span>  130 min = 2 h 10 min<span class="dim"></span></div>
+  <div class="line">&nbsp;</div>
+  <div class="line"><span class="prompt">~/pomodoro&gt;</span> <span class="cmd">./pomodoro --json</span></div>
+  <div class="line"><span class="dim">{</span></div>
+  <div class="line"><span class="dim">  "app": "Pomodoro Timer",</span></div>
+  <div class="line"><span class="dim">  "version": "1.0.0",</span></div>
+  <div class="line"><span class="dim">  "work_minutes": 25,</span></div>
+  <div class="line"><span class="dim">  "break_minutes": 5,</span></div>
+  <div class="line"><span class="dim">  "long_break_minutes": 15,</span></div>
+  <div class="line"><span class="dim">  "sessions_before_long": 4,</span></div>
+  <div class="line"><span class="dim">  "total_minutes": 130,</span></div>
+  <div class="line"><span class="dim">  "schedule": [...]</span></div>
+  <div class="line"><span class="dim">}</span></div>
+  <div class="line">&nbsp;</div>
+  <div class="line"><span class="prompt">~/pomodoro&gt;</span> <span class="cmd">./pomodoro --timer</span></div>
+  <div class="line"><span class="cyan bold">⏰ Pomodoro Timer — Interactive Mode</span></div>
+  <div class="line"><span class="dim">  Ctrl+C to stop the current session</span></div>
+  <div class="line">&nbsp;</div>
+  <div class="line"><span class="cyan bold">━━━ Work Session 1/4 ━━━</span></div>
+  <div class="line">  <span class="green">⏳ 24:32 | [================>      ]  65%</span></div>
+  <div class="line">&nbsp;</div>
+  <div class="line"><span class="green bold">✓ Work session 1 complete!</span></div>
+  <div class="line"><span class="cyan bold">━━━ Break (1) ━━━</span></div>
+  <div class="line">  <span class="blue">☕ 03:45 | [=======>               ]  25%</span></div>
+  <div class="line">&nbsp;</div>
+  <div class="line"><span class="prompt">~/pomodoro&gt;</span> <span class="cmd">_</span></div>
+</div>
+</body>
+</html>
